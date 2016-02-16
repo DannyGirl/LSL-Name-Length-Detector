@@ -1,0 +1,17 @@
+string name;
+integer length;
+integer lengthmod;
+default
+{
+    state_entry()
+    {
+        llSetText("Name length detector", <1, 1, 1>, 1);
+    }
+    touch_start (integer num)
+    {
+        name = llDetectedName(0);
+        length = llStringLength(name);
+        lengthmod = length-1;
+        llSay(0, name + " is " + lengthmod + " letters long");
+    }
+}
